@@ -3,6 +3,9 @@
         width: 400px;
         height:50px;
     }
+    .red{
+        color:red;
+    }
 </style>
 </head>
  
@@ -28,17 +31,18 @@
     const warnLength = 7;
     
     function textCounter(e){
-        console.log(e);
         let count = txt.value.length;
+        console.log(count);
         if(count > maxLength){
-            console.log(txt.value.substring(0,maxLength));
             txt.value = txt.value.substring(0,maxLength);
         }
         if(count > warnLength){
-            output.innerHTML = (maxLength-count) + " characters left";
+            output.classList.add("red");
+        }else{
+            output.classList.remove("red");
         }
-        //https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/substring
-        console.log(count);
+        output.innerHTML = (maxLength-count) + " characters left";
+        
     }
     
   
