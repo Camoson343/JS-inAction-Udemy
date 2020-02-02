@@ -22,12 +22,18 @@
             const output = document.querySelector(".output");
             const txt = document.querySelector("textarea");
 
-            txt.addEventListener("change",textCounter);
-            txt.addEventListener("keyup",textCounter);
+            // txt.addEventListener("change", textCounter);
+            // txt.addEventListener("keyup",textCounter);
+            // txt.addEventListener("keydown",textCounter);
+
+            ["keyup","keydown","change"].forEach(function(e){
+                txt.addEventListener(e,textCounter);
+            })
 
             function textCounter(e){
                 console.log(e);
             }
+
         </script>
     </body>
 </html>
